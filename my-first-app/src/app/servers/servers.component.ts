@@ -9,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class ServersComponent {
 
+    allowNewServer:boolean = false;
+
+    constructor(){
+      setTimeout(() => {
+        this.allowNewServer = true;
+      },2000);
+
+    }
 }

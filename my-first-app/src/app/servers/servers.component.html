@@ -1,13 +1,32 @@
 <label>Server Name</label>
-<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> --> <!-- event binding   -->
-<input type="text" class="form-control" [(ngModel)]="serverName"> <!--  two way binding     -->
-<!-- <p>{{serverName}}</p> -->
+<input type="text" class="form-control" (input)="onUpdateServerName($event)"> <!--  event binding   -->
+<!-- <input type="text" class="form-control" [(ngModel)]="serverName">  --> <!-- two way binding -->    
+<p>{{serverName}}</p>
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">
     Add Server
 </button>
-<p [innerText]="serverCreationStatus"></p>
-<label>Username</label>
-<input type="text" class="form-control" [(ngModel)]="username">
-<p>{{username}}</p>
-<button class="btn btn-warning" [disabled]="username === ''" (click)="onRestUser()">Reset User</button>
-<app-server></app-server>
+<!-- <p [innerText]="serverCreationStatus"></p> -->
+<p *ngIf="serverCreated; else noServer">{{'Server was created!. Name is '+ serverName}}</p>
+<ng-template #noServer>
+    <p>No Server Created!</p>
+</ng-template>
+<hr>
+<div>
+    <label>Username</label>
+    <input type="text" class="form-control" [(ngModel)]="username">
+    <p>{{username}}</p>
+    <button class="btn btn-warning" [disabled]="username === ''" (click)="onRestUser()">Reset User</button>
+</div>
+<hr>
+<div>
+    <!-- <button class="btn btn-primary" (click)="showSecret = !showSecret">Display Details</button> -->
+    <button class="btn btn-primary" (click)="onToggleDetails()">Display Details</button>
+    <p *ngIf="showSecret">Secret Password</p>
+    <div *ngFor="let logItem of log; let i = index"
+    [ngStyle]="{backgroundColor : i>= 4 ? 'blue' : 'transparent'}"
+    [ngClass]="{'white-text' : i>= 5 }"
+    >
+        {{logItem}}
+    </div>
+</div>
+<app-server *ngFor="let server of servers"></app-server>

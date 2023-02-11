@@ -10,6 +10,9 @@ import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { BlueprintComponent } from './blueprint/blueprint.component';
 import { ServerElementComponent } from './server-element/server-element.component';
 import { CockpitComponent } from './cockpit/cockpit.component';
+import { EvenComponent } from './even/even.component';
+import { OddComponent } from './odd/odd.component';
+import { GameControlComponent } from './game-control/game-control.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { CockpitComponent } from './cockpit/cockpit.component';
     WarningAlertComponent,
     BlueprintComponent,
     ServerElementComponent,
-    CockpitComponent
+    CockpitComponent,
+    EvenComponent,
+    OddComponent,
+    GameControlComponent
   ],
   imports: [
     FormsModule,

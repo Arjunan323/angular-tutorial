@@ -10,6 +10,11 @@
             <app-success-alert></app-success-alert>
             <hr>
             <app-blueprint></app-blueprint>
+            <hr>
+            <app-game-control (intervalFired)="onIntervalFierd($event)"></app-game-control>
+            <hr>    
+            <app-odd *ngFor="let oddNumber of oddNumbers"  [number]="oddNumber"></app-odd>
+            <app-even *ngFor="let evenNumber of evenNumbers"  [number]="evenNumber"></app-even>
         </div>
     </div>
 </div>

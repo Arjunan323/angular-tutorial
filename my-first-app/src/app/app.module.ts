@@ -13,6 +13,10 @@ import { CockpitComponent } from './cockpit/cockpit.component';
 import { EvenComponent } from './even/even.component';
 import { OddComponent } from './odd/odd.component';
 import { GameControlComponent } from './game-control/game-control.component';
+import { OnlyOddComponent } from './only-odd/only-odd.component';
+import { BasicHighLightDirective } from './basic-highlight/basic-highlight.directive';
+import { BetterHighlightDirective } from './better-directive/better-highlight.directive';
+import { UnlessDirective } from './unless/unless.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import { GameControlComponent } from './game-control/game-control.component';
     CockpitComponent,
     EvenComponent,
     OddComponent,
-    GameControlComponent
+    GameControlComponent,
+    OnlyOddComponent,
+    BasicHighLightDirective,
+    BetterHighlightDirective,
+    UnlessDirective
   ],
   imports: [
     FormsModule,

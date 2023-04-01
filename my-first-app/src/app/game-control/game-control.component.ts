@@ -1,16 +1,18 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { LoggingService } from '../services/logging.service';
 
 @Component({
   selector: 'app-game-control',
   templateUrl: './game-control.component.html',
-  styleUrls: ['./game-control.component.css']
+  styleUrls: ['./game-control.component.css'] ,
+  providers : [LoggingService]
 })
 export class GameControlComponent {
   @Output() intervalFired = new EventEmitter<number>();
   interval;
   lastNumber = 0;
 
-  constructor(){
+  constructor(private loginService : LoggingService){
 
   }
 

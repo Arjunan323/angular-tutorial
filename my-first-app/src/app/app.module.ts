@@ -17,6 +17,7 @@ import { OnlyOddComponent } from './only-odd/only-odd.component';
 import { BasicHighLightDirective } from './basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './better-directive/better-highlight.directive';
 import { UnlessDirective } from './unless/unless.directive';
+import { AccountsComponent } from './accounts/accounts.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { UnlessDirective } from './unless/unless.directive';
     OnlyOddComponent,
     BasicHighLightDirective,
     BetterHighlightDirective,
-    UnlessDirective
+    UnlessDirective,
+    AccountsComponent
   ],
   imports: [
     FormsModule,

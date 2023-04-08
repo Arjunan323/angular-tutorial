@@ -13,14 +13,17 @@ export class RecipeService {
     }
 
     private recipes: Array<Recipe> = [
-        new Recipe('Test Recipe',
+        new Recipe(
+             1,
+            'Test Recipe',
             'Test',
             'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?cs=srgb&dl=pexels-ella-olsson-1640777.jpg&fm=jpg',
             [
                 new Ingredient('Meat' , 1),
                 new Ingredient('French Fries', 20)
             ]),
-        new Recipe('Test Recipe1',
+        new Recipe( 2 ,
+            'Test Recipe1',
             'Test1',
             'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?cs=srgb&dl=pexels-ella-olsson-1640777.jpg&fm=jpg',
             [
@@ -36,5 +39,9 @@ export class RecipeService {
 
     addIngredentsToShoppinList(ingredient: Ingredient[]){
         this.shopping.addIngredients(ingredient);
+    }
+
+    getRecipeById(id: number) : Recipe {
+        return this.recipes.slice().find(recipe  => recipe.id === id);
     }
 }
